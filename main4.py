@@ -18,9 +18,9 @@ def main(page:ft.Page):
         if datetime.today().month < data_nascimento.month:
             idade = idade - 1
         if int(idade)  >= 18:
-            txt_resultado.value = f'Maior de idade'
+            txt_resultado.value = f'Você tem {idade} anos e é maior de idade.'
         else:
-            txt_resultado.value = f'Menor de idade'
+            txt_resultado.value = f'Você tem {idade} anos e é menor de idade'
 
         page.update()
 
