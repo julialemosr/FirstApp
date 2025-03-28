@@ -9,6 +9,7 @@ def main(page:ft.Page):
     page.window.width = 375
     page.window.height = 667
 
+
     #Definição de função
     def mostrar_idade(e):
         txt_resultado.value = input_nascimento.value
