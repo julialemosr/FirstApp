@@ -18,7 +18,7 @@ def main(page: ft.Page):
     # Funções
     lista = []
     def salvar_nome(e):
-        if input_nome.value == '':
+        if input_nome.value == '' or  input_profissao.value == '' or  input_salario.value == '':
             page.overlay.append(msg_error)
             msg_error.open = True
             page.update()
