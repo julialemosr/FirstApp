@@ -1,7 +1,7 @@
 import flet as ft
-from flet import AppBar,ElevatedButton, Page,  Text, View, colors
-from flet.core import page
+from flet import AppBar,ElevatedButton, Page,  Text, colors
 from flet.core.colors import Colors
+from flet.core.view import View
 
 
 def main(page:ft.Page):
