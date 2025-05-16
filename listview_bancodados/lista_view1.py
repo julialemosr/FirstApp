@@ -48,7 +48,7 @@ def main(page: ft.Page):
                         icon=ft.Icons.MORE_VERT,
                         items=[
                             ft.PopupMenuItem(
-                                text="Detalhes dos Funcionários"
+                                text="Detalhe dos Funcionários"
                             ),
                         ],
                         on_select=lambda _, liv=l: ver_detalhes(liv.nome, liv.cargo, liv.salario),
@@ -62,7 +62,7 @@ def main(page: ft.Page):
         txt.value = (f"Nome: {nome}; "
                      f"\nCargo: {cargo}; "
                      f"\nSalario: {salario}.")
-        page.go("/listar_detalhes")
+        page.go("/lista_dos_detalhes")
 
     def gerencia_rota(e):
         page.views.clear()
@@ -91,10 +91,10 @@ def main(page: ft.Page):
                 )
             )
 
-        if page.route == "/listar_dos_detalhes":
+        if page.route == "/lista_dos_detalhes":
             page.views.append(
                 View(
-                    "/listar_dos_detalhes",
+                    "/lista_dos_detalhes",
                     [
                         AppBar(title=Text("Lista de funcionários"), bgcolor=Colors.PURPLE_200),
                         txt,
@@ -104,10 +104,6 @@ def main(page: ft.Page):
             )
         page.update()
 
-    def voltar(e):
-        page.views.pop()
-        top_view = page.views[-1]
-        page.go(top_view.route)
 
     # Campos
     input_nome = ft.TextField(label="Nome")
@@ -126,7 +122,6 @@ def main(page: ft.Page):
     page.overlay.append(msg_sucesso)
     page.overlay.append(msg_erro)
     page.on_route_change = gerencia_rota
-    page.on_view_pop = voltar
 
     page.go(page.route)
 

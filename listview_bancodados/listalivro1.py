@@ -64,7 +64,7 @@ def main(page: ft.Page):
                      f" \nAutor: {autor}; "
                      f"\nDescrição: {descricao}; "
                      f"\nCategoria: {categoria}.")
-        page.go("/listar_detalhes")
+        page.go("/lista_dos_detalhes")
 
     def gerencia_rota(e):
         page.views.clear()
@@ -101,7 +101,7 @@ def main(page: ft.Page):
                     [
                         AppBar(title=Text("Lista dos Livros"), bgcolor=Colors.PINK_200),
                         txt,
-                        ElevatedButton(text="Voltar!", on_click=lambda _: page.go("/lista"), color=ft.CupertinoColors.SYSTEM_BACKGROUND, width=375)
+                        ElevatedButton(text="Voltar", on_click=lambda _: page.go("/lista"), color=ft.CupertinoColors.SYSTEM_BACKGROUND, width=375)
                     ]
                 )
             )
