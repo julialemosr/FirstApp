@@ -12,11 +12,11 @@ class Funcionario(Base):
     __tablename__ = 'FUNCIONARIOS'
     id_funcionario = Column(Integer, primary_key=True)
     nome = Column(String(50), nullable=False, index=True)
-    profissao = Column(String(50), nullable=False, index=True)
+    cargo = Column(String(50), nullable=False, index=True)
     salario = Column(Float, nullable=False, index=True)
 
     def __repr__(self):
-        return '<Funcionarios: Nome: {} Profissao: {} Salario: {}>'.format(self.nome, self.profissao, self.salario)
+        return '<Funcionarios: Nome: {} Cargo: {} Salario: {}>'.format(self.nome, self.cargo, self.salario)
 
     def save(self):
         db_session.add(self)
@@ -30,7 +30,7 @@ class Funcionario(Base):
         dados_funcionarios = {
             'id do fucionário': self.id_funcionario,
             'nome': self.nome,
-            'Profissão': self.profissao,
+            'Cargo': self.cargo,
             'salario': self.salario
         }
 
