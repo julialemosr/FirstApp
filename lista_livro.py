@@ -74,7 +74,7 @@ def main(page: ft.Page):
                 View(
                     "/segunda",
                     [
-                        AppBar(title=Text("Segunda tela"), bgcolor=Colors.SECONDARY_CONTAINER),
+                        AppBar(title=Text("Resultado livros"), bgcolor=Colors.SECONDARY_CONTAINER),
                         lv_titulo,
 
                     ],
